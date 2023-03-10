@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP-LB-RoundRobin</title>
+</head>
+
+<body>
+    <section>
+        <h1>APP-LB-RoundRobin</h1>
+    </section>
+    <section>
+        <div>
+            <input id="value" placeholder="Value: " type="text" class="cadenainput" />
+            <button onclick="postValue()">Enviar</button>
+        </div>
+        <div class="table">
+            <h2>Base de Datos</h2>
+            <table id="tabla">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Value</th>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function postValue() {
+            var cadena = document.getElementById("value").value;
+            document.getElementById("value").value = "";
+            var url = "/log?value=" + cadena;
+            fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+            }).then(res => res.json()).then(function (data) {
+                console.log(data);
+                var tbl = document.getElementById("tabla");
+                var rowCount = tbl.rows.length;
+                for (var x = rowCount - 1; x > 0; x--) {
+                    tbl.deleteRow(x);
+                }
+                data.forEach(element => {
+                    let row = tbl.insertRow();
+                    let fecha = row.insertCell();
+                    let cadena = row.insertCell();
+                    fecha.innerHTML = element.fecha;
+                    cadena.innerHTML = element.value;
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
