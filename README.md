@@ -39,7 +39,14 @@ Aca podemos ver cada instancia de EC2 corriendo, una con mongo, tres con el logs
 
 [![aws3.png](https://i.postimg.cc/tgzxrrpy/aws3.png)](https://postimg.cc/67yqqf81)
 
-Aca podemos ver el funcionamiento de la aplicacion
 
-[![awsf.png](https://i.postimg.cc/9FNwK46R/awsf.png)](https://postimg.cc/Xpdvyv74)
+Aca podemos ver el funcionamiento de la aplicacion:
+
+[![awsz.png](https://i.postimg.cc/y8Y7zvzv/awsz.png)](https://postimg.cc/bsM7x0rt)
+
+### Estructura de archivos
+
+[![awsE.png](https://i.postimg.cc/GmbjQsnW/awsE.png)](https://postimg.cc/PPFZfJxy)
+
+[![awse2.png](https://i.postimg.cc/5NDVQbcQ/awse2.png)](https://postimg.cc/xcG7Wr19)
 
